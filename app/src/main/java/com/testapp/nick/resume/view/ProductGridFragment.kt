@@ -2,10 +2,12 @@ package com.testapp.nick.resume.view
 
 import android.os.Bundle
 import android.view.*
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.testapp.nick.resume.R
+import com.testapp.nick.resume.model.ProductEntry
 import com.testapp.nick.resume.view.adapter.ProductCardRecyclerViewAdapter
 import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.*
 
@@ -28,13 +30,15 @@ class ProductGridFragment : Fragment() {
             false
         )
 
-        view.recycler_view.adapter = ProductCardRecyclerViewAdapter(
-            ProductEntry.initProductEntryList(resources)
+        var productList: ArrayList<ProductEntry> = ArrayList()
+        productList.add(ProductEntry().createProductEntry("创新", "加创新的简历", R.drawable.resume_creative))
+       view.recycler_view.adapter = ProductCardRecyclerViewAdapter(
+           productList
         )
 
         val largePadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing)
         val smallPadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small)
-        view.recycler_view.addItemDecoration(ProductGridItemDecoration(largePadding, smallPadding))
+        //view.recycler_view.addItemDecoration(ProductGridItemDecoration(largePadding, smallPadding))
     }
 
 }

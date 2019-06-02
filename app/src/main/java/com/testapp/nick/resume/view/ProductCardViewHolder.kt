@@ -14,7 +14,7 @@ import com.testapp.nick.resume.R
 class ProductCardViewHolder(itemView: View) //TODO: Find and store views from itemView
     : RecyclerView.ViewHolder(itemView) {
 
-    var productImage: ImageView = itemView.findViewById(R.id.product_image)
+    var productImage: ImageView = itemView.findViewById(R.id.product_img)
     var productTitle: TextView = itemView.findViewById(R.id.product_title)
     var productPrice: TextView = itemView.findViewById(R.id.product_price)
 }

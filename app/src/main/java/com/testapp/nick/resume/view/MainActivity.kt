@@ -13,6 +13,10 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.navigation_home -> {
                 textMessage.setText(R.string.title_home)
+                supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.container, ProductGridFragment())
+                    .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
