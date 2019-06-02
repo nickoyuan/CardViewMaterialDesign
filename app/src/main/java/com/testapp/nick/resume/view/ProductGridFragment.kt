@@ -31,7 +31,18 @@ class ProductGridFragment : Fragment() {
         )
 
         var productList: ArrayList<ProductEntry> = ArrayList()
-        productList.add(ProductEntry().createProductEntry("创新", "加创新的简历", R.drawable.resume_creative))
+        productList.add(ProductEntry().createProductEntry(
+            "创新", "加创新的简历", R.drawable.resume_creative
+        ))
+        productList.add(ProductEntry().createProductEntry(
+            "简单", "加简单的简历", R.drawable.resume_simple
+        ))
+        productList.add(ProductEntry().createProductEntry(
+            "专业", "加专业的简历", R.drawable.resume_professional
+        ))
+        productList.add(ProductEntry().createProductEntry(
+            "大学", "加大学的简历", R.drawable.resume_collage
+        ))
        view.recycler_view.adapter = ProductCardRecyclerViewAdapter(
            productList
         )
